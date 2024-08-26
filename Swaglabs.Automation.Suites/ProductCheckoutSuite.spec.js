@@ -37,68 +37,49 @@ test.describe('UI: Checkout Workflow',()=>
   });
 
 
-  test.skip('Checkout process',async({page})=>
+  test('Checkout process',async({page})=>
     {
       console.log(process.env.url);
       console.log(process.env.name);
       console.log(process.env.password);
 
-        // //verify home page url
-        // let homepageUrl = await page.url();
-        // console.log(homepageUrl)
-        // if(homepageUrl != HomePageConstants.HomePageUrl)
-        // {
-        //     fail("Url Not Matched.");
-        // }
+        //verify home page url
+        let homepageUrl = await page.url();
+        console.log(homepageUrl)
+        if(homepageUrl != HomePageConstants.HomePageUrl)
+        {
+            fail("Url Not Matched.");
+        }
 
-        //     //Add to cart : First product
-        //     await clickPageExtension.ClickButtonByIdAsync(HomePageConstants.SauceLabBackPackButtonId);
+            //Add to cart : First product
+            await clickPageExtension.ClickButtonByIdAsync(HomePageConstants.SauceLabBackPackButtonId);
 
-        //     //Click on cart icon
-        //     await clickPageExtension.ClickButtonByIdAsync(HomePageConstants.CartIconId);
+            //Click on cart icon
+            await clickPageExtension.ClickButtonByIdAsync(HomePageConstants.CartIconId);
 
-        //     //Click on Check out button
-        //     await clickPageExtension.ClickButtonByIdAsync(HomePageConstants.CheckoutButtonId);
+            //Click on Check out button
+            await clickPageExtension.ClickButtonByIdAsync(HomePageConstants.CheckoutButtonId);
 
-        //     //Enter Information
-        //     await setPageExtenstion.SetTextBoxValueByPlaceholder(HomePageConstants.FirstNameTextBoxPlaceholderText, 'John');
-        //     await setPageExtenstion.SetTextBoxValueByPlaceholder(HomePageConstants.LastNameTextBoxPlaceholderText, 'Doe');
-        //     await setPageExtenstion.SetTextBoxValueByPlaceholder(HomePageConstants.ZipCodeTextBoxPlaceholderText, '123456');
+            //Enter Information
+            await setPageExtenstion.SetTextBoxValueByPlaceholder(HomePageConstants.FirstNameTextBoxPlaceholderText, 'John');
+            await setPageExtenstion.SetTextBoxValueByPlaceholder(HomePageConstants.LastNameTextBoxPlaceholderText, 'Doe');
+            await setPageExtenstion.SetTextBoxValueByPlaceholder(HomePageConstants.ZipCodeTextBoxPlaceholderText, '123456');
             
-        //     //Click on continue button
-        //     await clickPageExtension.ClickButtonByIdAsync(HomePageConstants.ContinueButtonId);
+            //Click on continue button
+            await clickPageExtension.ClickButtonByIdAsync(HomePageConstants.ContinueButtonId);
             
-        //     //Get Payment Information
-        //     var paymentNumber = await getPageExtension.GetInnerTextByLocator(HomePageConstants.PaymentInformationDataTest);
-        //     console.log(paymentNumber);
+            //Get Payment Information
+            var paymentNumber = await getPageExtension.GetInnerTextByLocator(HomePageConstants.PaymentInformationDataTest);
+            console.log(paymentNumber);
             
-        //     //Click on finish button
-        //     await clickPageExtension.ClickButtonByIdAsync(HomePageConstants.FinishButtonId);
-        //     //Click on Back home button
-        //     await clickPageExtension.ClickButtonByIdAsync(HomePageConstants.BackHomeButtonId);
+            //Click on finish button
+            await clickPageExtension.ClickButtonByIdAsync(HomePageConstants.FinishButtonId);
+            //Click on Back home button
+            await clickPageExtension.ClickButtonByIdAsync(HomePageConstants.BackHomeButtonId);
 
     });
 
-    // test('env1', async({page})=>{
-    //   console.log(process.env.NODE_ENV);
-    //   console.log(process.env.url);
-    //   console.log(process.env.name);
-    //   console.log(process.env.password);
-    // });
-
-    // test('env2', async({page})=>{
-    //   console.log(process.env.NODE_ENV);
-    //   console.log(process.env.url);
-    //   console.log(process.env.name);
-    //   console.log(process.env.password);
-    // })
-
-    // test('env3', async({page})=>{
-    //   console.log(process.env.NODE_ENV);
-    //   console.log(process.env.url);
-    //   console.log(process.env.name);
-    //   console.log(process.env.password);
-    // })
+  
   
 
   test.afterEach(async({page})=>
